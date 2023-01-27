@@ -1,0 +1,12 @@
+package.json: npm init
+package-lock.json: npm install
+parcel as Dev dependency: npm install -D parcel (returns node_modules)
+React installation command: npm install react 
+React-dom installation command: npm install react-dom
+npx: execute with npm
+.parcel-cache and dist: npx parcel index.html(Entry Point)
+dist folder(bulid command): npx parcel build index.html(Entry Point) 
+To create https://localhost:1234: npx parcel index.html --https
+Babel plugin to remove all the console logs from the bundled code: npm install babel-plugin-transform-remove-console --save-dev
+react-router-dom : npm install react-router-dom
+formik: npm install formik --save

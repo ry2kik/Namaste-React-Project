@@ -1,0 +1,77 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.nav-items ul {
+    list-style-type: none;
+    display: flex;
+    margin-top: 10px;
+}
+
+.nav-items ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-items ul li {
+    padding: 10px;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 3px;
+    height: 380px;
+    color: black;
+}
+
+.card:hover {
+    box-shadow: 5px 10px 10px #888888;
+    transition: all 0.2s ease-in-out;
+}
+
+.search-container {
+    margin-left: 10px;
+}
+
+.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.restaurant-list a {
+    text-decoration: none;
+}
+
+.shimmer-card {
+    width: 250px;
+    height: 250px;
+    background-color: gainsboro;
+    margin: 20px;
+}
+
+.restaurent-info {
+    background-color: rgb(2, 2, 41);
+}
+
+.error_page .row .col-lg-6 {
+    margin: auto;
+}
+
+.fs-20 {
+    font-size: 18px;
+}
