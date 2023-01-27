@@ -1,0 +1,20 @@
+1) Difference between dafault and named export:
+	Default export:
+		const func_name = () => {
+			return <h1>Default Export</h1>;
+		}
+		export degault func_name;
+	Named Export: 
+		export const func_name = () => {
+			return <h1>Named Export</h1>
+		}	
+	
+
+2) config.js:
+	config.js or constants.js file is used to store all the hard coded data stored in a variable. Like: RestaurentList, or image url.
+
+3) React Hook:
+	With Hooks, you can extract stateful logic from a component so it can be tested independently and reused. Hooks allow you to reuse stateful logic without changing your component hierarchy. 
+
+4) useState:
+	We need useState Hook to change the state of the variables because React doesn't track any other variable apart from Hook variables especially useState() variables.
