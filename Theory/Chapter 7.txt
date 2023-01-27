@@ -1,0 +1,25 @@
+1) Ways to add image into app:
+	Using cdn or direct url or locally using path by saving image to asset folder as below:
+     i) import Logo from '../assets/img/foodvilla.png';
+	<a href="/">
+        	<img src={Logo} alt="The image is not found" height="70" width="70" />
+    	</a>
+	We can also add the cdn url in constants/config.js file and can write as below:-
+    ii) import { IMG_CDN_URL } from "../Constants";
+	<img src = { IMG_CDN_URL + cloudinaryImageId } />
+
+2) What would happen if we do console.log(useState())?
+	console.log(useState()) It will have 2 values like this (2) [undefined, ƒ].
+	console.log(useState("Default value here")) It will have 2 values like this (2) ["Default value here", ƒ]
+
+3) useEffect() without dependency array:
+	Use effect will get called each time after render if don’t add any dependency array. i.e. each time whenever there is  state change, component will re-render and hence useEffect will get called. If we give empty dependency array [], it will be called only once. If we give [someVariable], then it’s callback function will be called only when 'someVariable' has updated.
+
+4) SPA (Single Page Application):
+	A single page application is a single page where a lot of information stays the same and only a few pieces need to be updated at a time.For example, when you browse through your email, you’ll notice that not much changes during navigation — the sidebar and header remain untouched as you go through your inbox.
+	The SPA only sends what you need with each click, and your browser renders that information. This is different than a traditional page load where the server rerenders a full page with every click you make and sends it to your browser.
+
+5) Client Side Routing vs Server Side Routing:
+	Traditional Browser normally uses server side routing. In Server-side Routing when the browser requests a document from a web server, downloads and evaluates CSS and JavaScript assets, and renders the HTML sent from the server. When the user clicks a link, it starts the process all over again for a new page.
+	But in Client-side Routing allows your app to update the URL from a link click without making another request for another document from the server. Instead, your app can immediately render some new UI and make data requests with fetch to update the page with new information.
+	This enables faster user experiences because the browser doesn't need to request an entirely new document or re-evaluate CSS and JavaScript assets for the next page. It also enables more dynamic user experiences with things like animation.
