@@ -14,6 +14,7 @@ import Error from "./Component/Error";
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
 import Contact from "./Component/Contact";
+import Profile from "./Component/ProfileClass";
 import SignupForm from './Component/SignupForm';
 import RestaurentMenu from "./Component/RestaurentMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
@@ -43,13 +44,13 @@ const appRouter = createBrowserRouter([
             {
                 path: '/about',
                 element: <About />,
-                // children: [
-                //     {
-                //         // path: '/profile', This will leads to localhost:1234/profile that's why we have to route like as follow
-                //         path: 'profile',   // localhost:1234/about/profile
-                //         element: <Profile />
-                //     }
-                // ]
+                children: [
+                    {
+                        // path: '/profile', This will leads to localhost:1234/profile that's why we have to route like as follow
+                        path: 'profile',   // localhost:1234/about/profile
+                        element: <Profile />
+                    }
+                ]
             },
             {
                 path: '/contact',
