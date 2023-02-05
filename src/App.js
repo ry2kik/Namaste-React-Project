@@ -6,10 +6,9 @@
  * Testable
  * Reusable
  */
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Body from "./Component/Body";
-import About from "./Component/About";
 import Error from "./Component/Error";
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
@@ -18,6 +17,21 @@ import Profile from "./Component/ProfileClass";
 import SignupForm from './Component/SignupForm';
 import RestaurentMenu from "./Component/RestaurentMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Shimmer from "./Component/Shimmer";
+
+/**
+ * 
+ * Chunking
+ * Code spliting
+ * Dynamic bundling
+ * lazy loading
+ * on demand loading - is used when a part of big application is in use
+ * Dynamic import
+ */
+
+// Neverever dynamically load component inside another component
+const Instamart = lazy(() => import('./Component/Instamart'));
+const About = lazy(() => import('./Component/About'));
 
 // Never create a component inside a component, for example don't create a component inside AppLayout component;
 const AppLayout = () => {
@@ -43,7 +57,10 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: '/about',
-                element: <About />,
+                element: 
+                    <Suspense fallback = { <h1>Loading... </h1> }>
+                        <About />
+                    </Suspense>,
                 children: [
                     {
                         // path: '/profile', This will leads to localhost:1234/profile that's why we have to route like as follow
@@ -63,6 +80,13 @@ const appRouter = createBrowserRouter([
             {
                 path:'/signupform',
                 element: <SignupForm />
+            },
+            {
+                path: '/instamart',
+                element: 
+                    <Suspense fallback = { <Shimmer /> } >
+                        <Instamart />
+                    </Suspense>
             }
         ]
     },

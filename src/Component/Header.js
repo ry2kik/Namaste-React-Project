@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from '../assets/img/foodvilla.png';
+import useOnline from "../utils/useOnline";
 
 const Title = () => (
     <a href="/">
@@ -30,8 +31,16 @@ const Header = () => {
                         <li>Contact</li>
                     </Link>
                     <li>cart</li>
+                    <Link to = '/instamart'>
+                        <li>Instamart</li>
+                    </Link>
                 </ul>
             </div>
+            <h4 className="mt-3">
+                {
+                    useOnline() ? '🟢' : '🔴'
+                }
+            </h4>
             {
                 isLoggedIn ? (
                     <button className="btn btn-success m-3"
