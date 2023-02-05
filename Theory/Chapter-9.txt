@@ -1,0 +1,34 @@
+1) when and why do we need lazy()?
+Ans: Lazy loading is one of the most common design patterns used in web and mobile development.It is widely used with frameworks like React to increase an application's performance by reducing initial loading time by spliting the code into chucks.
+
+2) What is suspense? Or,
+   when and why do we need suspense()?
+Ans: React Suspense is a React component that suspends a component(‘s) being render until a certain condition has been met, and will display a fallback option. This fallback option is required, and it may be a string or another React component such as a spinner. Example:
+
+	const Instamart = lazy(() => import('./Component/Instamart'));
+	<Suspense fallback = { <Shimmer /> } >
+		<Instamart />
+	</Suspense>
+
+3) Why we got this error: A component suspended while responding to synchronous input. This will create the UI to be replaced with a loading indicator. To fix, updates that should be wrapped  with startTransition? How does suspense fix this error?
+Ans: 
+const YComponent = React.lazy(() => import('./ YComponent'));  
+function XComponent() {  
+  return (  
+    <div>  
+      <Suspense fallback={<div>Loading...</div>}>  
+        <YComponent />  
+      </Suspense>  
+    </div>  
+  );  
+}
+
+4) Advantages and disadvantages of using this code splitting pattern?
+Ans: 
+Advantages:
+i)   Improves the performance of the app.
+ii)  Improves the impact on memory.
+iii) Improves the downloaded Kilobytes (or Megabytes) size.
+
+Disadvantages:
+Code splitting decreases the amount of data that needs to be downloaded for the initial view to load at the cost of increasing load time for each feature (page?, opened panel?) that has assets (code, images, etc.) that are not in the initially downloaded data.
